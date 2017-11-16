@@ -1,7 +1,6 @@
 
 var webpack = require('webpack');
 var path = require('path');             
-
 var config = {
   entry: './src/main.js',
   devServer: {
@@ -21,9 +20,21 @@ var config = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ }
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel',
+        query: {
+            presets: ['react', 'es2015']
+        }
+    },
+    {
+      test: /\.scss$/,
+      loader: 'style!css!sass'
+    }
+    
     ]
-  }
+  },
 }
 
 module.exports = config;

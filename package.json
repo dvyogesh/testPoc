@@ -7,7 +7,10 @@
     "test": "mocha --compilers js:babel-register --require ./test/helpers.js --require ./test/dom.js --recursive",
     "test:watch": "npm test -- --watch",
     "start": "webpack-dev-server --port 3000 --devtool eval --progress --colors --hot --content-base src",
-    "build": "webpack"
+    "build": "webpack",
+    "eject": "react-scripts eject",
+    "sass": "sass --watch src/styles/scss:src/styles/css",
+    "sass:build": "sass src/styles/scss:src/styles/css"
   },
   "keywords": [],
   "author": "",
@@ -19,11 +22,15 @@
     "babel-preset-react": "^6.11.0",
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
+    "css-loader": "^0.28.7",
     "enzyme": "^2.3.0",
     "jsdom": "^9.3.0",
     "mocha": "^2.5.3",
+    "node-sass": "^4.6.1",
     "react-addons-test-utils": "^15.1.0",
+    "sass-loader": "^6.0.6",
     "sinon": "^1.17.4",
+    "style-loader": "^0.19.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
